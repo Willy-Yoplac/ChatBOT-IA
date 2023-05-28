@@ -11,7 +11,7 @@ openai.api_key = api_key
 #print(modelos)
 
 modelo = "text-davinci-002"
-prompt = "Elija un buen nombre para un perrito"
+prompt = "Escribe oraciones con la palabra 'casa'."
 #prompt = input("Ingresa tu pregunta: ")
 
 #Enviamos la peticon
@@ -19,9 +19,9 @@ prompt = "Elija un buen nombre para un perrito"
 respuesta = openai.Completion.create(
     engine=modelo,
     prompt=prompt,
-    n=3, #Numero de respuestas que queremos
-    temperature =1, # que tan aleatorio seran las respuestas
-    max_tokens = 50
+    n=2, #Numero de respuestas que queremos
+    temperature =0.5, # que tan aleatorio seran las respuestas
+    max_tokens = 100
 )
 
 for idx, opcion in enumerate(respuesta.choices):
