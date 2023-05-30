@@ -50,4 +50,3 @@ if ubicacion:
         max_tokens =100
     )
     print(respuesta2.choises[0].text.strip())
-
