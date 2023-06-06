@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
-openai.api.key = api_key
+openai.api_key = api_key
 
 
 def contenido (tema, tokens, temperatura, modelo = "text-davinci-002"):
@@ -31,9 +31,9 @@ def resumir (texto, tokens, temperatura, modelo = "text-davinci-002"):
     return respuesta.choices[0].text.strip()
 
 #============PARA CREAR UN ARTICULO O DOCUMENTO=============
-tema = input("Elige un tema para tu artículo: ")
-tokens = int(input("Cuántos tokens máximos tendrá tu artículo: "))
-temperatura = input("Del 1 al 10, qué tan creativo quieres que sea tu artículo: ")
+#tema = input("Elige un tema para tu artículo: ")
+#tokens = int(input("Cuántos tokens máximos tendrá tu artículo: "))
+#temperatura = float(input("Del 1 al 10, qué tan creativo quieres que sea tu artículo: "))
 
 #articulo_creado = contenido(tema, tokens, temperatura)
 #print(articulo_creado)
@@ -41,7 +41,7 @@ temperatura = input("Del 1 al 10, qué tan creativo quieres que sea tu artículo
 #==================PARA RESUMIR UN ARTICULO=================
 original = input("Elige el artículo a resumir: ")
 tokens = int(input("Cuántos tokens máximos tendrá tu resumen: "))
-temperatura = input("Del 1 al 10, qué tan creativo quieres que sea tu artículo: ")
+temperatura = float(input("Del 1 al 10, qué tan creativo quieres que sea tu artículo: "))
 
-#resumen = resumir(original, tokens, temperatura)
-#print(resumen)
+resumen = resumir(original, tokens, temperatura)
+print(resumen)
