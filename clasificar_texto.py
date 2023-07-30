@@ -28,7 +28,7 @@ def clasificar_texto(texto):
         max_tokens = 50,
         temperature = 0.5
     )
-    return respuesta.choices[0].text.strip()
+    return respuesta.choices[0].text.strip() #
 
 # Hacemos el pedido
 texto_para_clasificar = input("Ingresa un texto: ")
